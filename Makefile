@@ -6,5 +6,4 @@ clean:
 	rm -rf ./dist
 	mkdir ./dist
 run:
-	clear
 	./dist/main.exe
