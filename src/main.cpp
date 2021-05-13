@@ -2,6 +2,8 @@
 #include <string>
 #include <math.h>
 
+#include "include/Fahrzeug.h"
+
 void konsolenAusgabe()
 {
     std::cout << "Hallo Welt\n";
@@ -67,6 +69,9 @@ int main()
     // quadrieren(3);
     // std::cout << isMe();
     // loops();
+    Fahrzeug a("Opel",2020);
+
+    a.toString();
 
     return 0;
 }
