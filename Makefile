@@ -1,7 +1,7 @@
 all: clean build run
 
 build:
-	g++ -g ./src/*.cpp -o ./dist/main 
+	g++ ./src/*.cpp ./src/include/*.h -o ./dist/main.exe
 clean:
 	rm -rf ./dist
 	mkdir ./dist
