@@ -2,6 +2,9 @@
 
 .vscode
 
+#build
+dist
+
 # Prerequisites
 *.d
 
