@@ -2,62 +2,101 @@
 #include <string>
 #include <math.h>
 
-
+using namespace std;
 
 void konsolenAusgabe()
 {
-    std::cout << "Hallo Welt\n";
+    cout << "Hallo Welt\n";
 }
 
 void rechner()
 {
     int x, y;
-    std::cout << "Hallo Wilkommen im Taschenrechner\n Gib doch bitte zwei Zahlen ein\n";
-    std::cin >> x;
-    std::cout << "Bitte gib die Zweite Zahl ein\n";
-    std::cin >> y;
+    cout << "Hallo Wilkommen im Taschenrechner\n Gib doch bitte zwei Zahlen ein\n";
+    cin >> x;
+    cout << "Bitte gib die Zweite Zahl ein\n";
+    cin >> y;
 
-
-    std::cout << "Das ergebniss ist " << x + y << " cool oder?";
+    cout << "Das ergebniss ist " << x + y << " cool oder?";
 }
 
-void begruessen(){
-    std::cout << "Wie ist dein Name\n";
+void begruessen()
+{
+    cout << "Wie ist dein Name\n";
 
-    std::string name;
+    string name;
 
-    std::getline(std::cin, name);
+    getline(cin, name);
 
-    std::cout << "Hallo " << name << ", schoen dich kennen zu lernen!" << std::endl;
-
+    cout << "Hallo " << name << ", schoen dich kennen zu lernen!" << endl;
 }
 
-void maxMin(){
-    std::cout << std::max(5,10) << std::endl;
-    std::cout << std::min(5,10) << std::endl;
+void maxMin()
+{
+    cout << max(5, 10) << endl;
+    cout << min(5, 10) << endl;
 }
 
-void quadrieren(int pow){
+void quadrieren(int powVar)
+{
     int x;
-    std::cin >> x;
-    std::cout << std::pow(x,pow) << std::endl;
+    cin >> x;
+    cout << pow(x, powVar) << endl;
 }
 
-bool isMe(){
-    std::cout << "Gib dein Name ein" << std::endl;
-    std::string name;
-    std::getline(std::cin,name);
-    return  name == "Gabriel Nadolny";
+bool isMe()
+{
+    cout << "Gib dein Name ein" << endl;
+    string name;
+    getline(cin, name);
+    return name == "Gabriel Nadolny";
 }
 
-void loops(){
-    std::string words[] = {"Hallo","Welt","Was geht"};
-    std::cout << sizeof(words);
+void loops()
+{
+    string words[] = {"Hallo", "Welt", "Was geht"};
+    cout << sizeof(words);
 }
 
-void changeThat(int &kek){
+void changeThat(int &kek)
+{
     // Hier kann die Referenz angepasst werden und die Orginall Variable geändert werden
     kek = 4;
+}
+
+void guessGame()
+{
+    /*
+
+    OMG was habe ich hier geschrieben, hoffentlich werde ich es irgendwann besser schreiben könne 
+    */
+    int max, rnd;
+    string input;
+    cout << "Gib die max Zahl ein" << endl;
+
+    cin >> max;
+
+    srand(time(0));
+    rnd = rand() % max + 1;
+    cout << "Errate die Zahl sie ist zwischen 0 und " << max << " Zahl ist " << rnd << endl;
+
+    do
+    {
+
+        cin >> input;
+
+        if (input == "stop")
+        {
+            cout << "Du hast aufgehört Zahlen zu erraten" << endl;
+            break;
+        }
+
+        if (stoi(input) == rnd)
+        {
+            cout << "Du hast die Richtige Zahl erraten" << endl;
+        }
+
+    } while (stoi(input) != rnd);
 }
 
 int main()
@@ -67,12 +106,10 @@ int main()
     // begruessen();
     // maxMin();
     // quadrieren(3);
-    // std::cout << isMe();
+    // cout << isMe();
     // loops();
 
-    
-
-
+    // guessGame();
 
     return 0;
 }
