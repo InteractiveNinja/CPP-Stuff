@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <math.h>
+#include "./headers/Tier.h"
+#include "./headers/Hund.h"
 
 using namespace std;
 
@@ -110,6 +112,12 @@ int main()
     // loops();
 
     // guessGame();
+    Tier m("Paul");
 
+    Hund h("kek");
+
+
+    m.sprechen();
+    h.sprechen();
     return 0;
 }
